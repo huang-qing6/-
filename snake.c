@@ -25,7 +25,7 @@ int reCreateFood;
 int fail;
 int score, add = 10;
 
-int dx[4] = {0, 0, 1, -1}, dy[4] = {-1, 1, 0, 0};
+int dx[4] = {0, 0, -1, 1}, dy[4] = {-1, 1, 0, 0};
 int d = -1;
 
 int main(){
@@ -42,6 +42,7 @@ int main(){
             createFood();
             reCreateFood = 0;
         }
+
         snakeMove();
         Sleep(200);
 
@@ -60,7 +61,7 @@ void welcome(){
     Pos(38, 6);
     printf("Welcome come to SnakeGame\n");
     Pos(38, 8);
-    printf("↑↓←→control direction\n");
+    printf("keyboard control direction\n");
     Pos(45, 10);
     printf("ESC For Exit\n");
     Pos(42, 12);
@@ -98,6 +99,7 @@ void initSnake(){
     head = (node *)malloc(sizeof(node));
     head->x = rand() % 58 + 1;
     head->y = rand() % 24 + 1;
+    head->next = NULL;
 
     Pos(head->x, head->y);
     printf("*");
