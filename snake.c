@@ -16,7 +16,7 @@ int getDirection();
 typedef struct Node{
     int x;
     int y;
-    Node *next;
+    struct Node *next; //c语言中需要注明strcut
 } node;
 
 node *head;
