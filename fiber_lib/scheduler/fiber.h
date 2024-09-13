@@ -1,5 +1,5 @@
-#ifndef _COROUTINE_H_
-#define _COROUTINE_H_
+#ifndef __COROUTINE_H__
+#define __COROUTINE_H__
 
 #include <iostream>
 #include <memory>   

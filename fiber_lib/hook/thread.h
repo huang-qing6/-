@@ -1,5 +1,5 @@
-#ifndef __THREAD_H__
-#define __THREAD_H__
+#ifndef _THREAD_H_
+#define _THREAD_H_
 
 #include <mutex>
 #include <condition_variable>
