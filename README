@@ -11,9 +11,9 @@ net -- 网络知识学习
 
 coroutine -- 对coroutine拙略的模仿
 -- fiber_lib 协程库
-  -- thread
-  -- fiber
-  -- schduler
-  -- timer
-  -- iomanager
+  -- thread 线程
+  -- fiber 协程
+  -- schduler 整合前两章的调度
+  -- timer 计时控制
+  -- iomanager 整合前四章，假如IO管理
   -- hook
