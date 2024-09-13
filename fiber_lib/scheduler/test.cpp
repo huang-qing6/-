@@ -29,11 +29,10 @@ int main(int argc, char const *argv[])
 			scheduler->scheduleLock(fiber);
 		}
 
-		sleep(6);
+		sleep(5);
 
 		std::cout << "\npost again\n\n"; 
-		for(int i=0;i<15;i++)
-		{
+		for(int i=0;i<15;i++){
 			std::shared_ptr<Fiber> fiber = std::make_shared<Fiber>(task);
 			scheduler->scheduleLock(fiber);
 		}		

@@ -52,7 +52,7 @@ namespace sylar{
 
         if(getcontext(&m_ctx)){
             std::cerr << "Fiber() failed\n";
-            pthread_exit(nullptr);
+            pthread_exit(NULL);
         }
 
         m_id = s_fiber_id++;
@@ -71,7 +71,7 @@ namespace sylar{
 
         if(getcontext(&m_ctx)){
             std::cerr << "Fiber(std::function<void()> cb, size_t stacksize, bool run_in_scheduler) failed\n";
-            pthread_exit(nullptr);
+            pthread_exit(NULL);
         }
 
         m_ctx.uc_link = nullptr;
