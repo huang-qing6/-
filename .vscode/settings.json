@@ -65,6 +65,8 @@
         "thread": "cpp",
         "typeinfo": "cpp",
         "set": "cpp",
-        "shared_mutex": "cpp"
+        "shared_mutex": "cpp",
+        "unistd.h": "c",
+        "stdlib.h": "c"
     }
 }
