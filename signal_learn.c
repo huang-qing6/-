@@ -11,6 +11,7 @@ void sigint_handle(int signum){
 
 int main(){
     // 注册sigint信号处理函数
+    // 重点在于signal函数的使用
     if(signal(SIGINT, sigint_handle) == SIG_ERR){
         perror("无法注册sigint信号处理函数");
         return 1;
