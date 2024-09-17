@@ -80,7 +80,6 @@ extern "C" {
     typedef int (*setsockopt_fun) (int sockfd, int level, int optname, const void *optval, socklen_t optlen);
     extern setsockopt_fun setsockopt_f;    
 
-    /*
     // function prototype -> 对应.h中已经存在 可以省略
 	// sleep function 
 	unsigned int sleep(unsigned int seconds);
@@ -117,7 +116,6 @@ extern "C" {
 
     int getsockopt(int sockfd, int level, int optname, void *optval, socklen_t *optlen);
     int setsockopt(int sockfd, int level, int optname, const void *optval, socklen_t optlen);
-    */
 }
 
 #endif

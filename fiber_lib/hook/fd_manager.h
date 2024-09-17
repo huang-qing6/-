@@ -53,35 +53,36 @@ namespace sylar{
             std::vector<std::shared_ptr<FdCtx>> m_datas;
     };
 
-    template <typename T>
+    template<typename T>
     class Singleton{
-        private:
-            static T* instance;
-            static std::mutex mutex;
+    private:
+        static T* instance;
+        static std::mutex mutex;
 
-        protected:
-            Singleton() {}
-        
-        public:
-            // Delete copy constructor and assignment operation
-            Singleton(const Singleton&) = delete;
-            Singleton& operator=(const Singleton&) = delete;
+    protected:
+        Singleton() {}  
 
-            static T* GetInstance(){
-                std::lock_guard<std::mutex> lock(mutex); // 保证线程安全
-                if(instance == nullptr)
-                    instance = new T();
-                return initstate;
+    public:
+        // Delete copy constructor and assignment operation
+        Singleton(const Singleton&) = delete;
+        Singleton& operator=(const Singleton&) = delete;
+
+        static T* GetInstance() {
+            std::lock_guard<std::mutex> lock(mutex); // Ensure thread safety
+            if (instance == nullptr) {
+                instance = new T();
             }
+            return instance;
+        }
 
-            static void DestroyInstance(){
-                std::lock_guard<std::mutex> lock(mutex);
-                delete instance;
-                instance = nullptr;
-            }
+        static void DestroyInstance() {
+            std::lock_guard<std::mutex> lock(mutex);
+            delete instance;
+            instance = nullptr;
+        }
     };
 
-    typedef Singleton<FdManager> FdMger;
+    typedef Singleton<FdManager> FdMgr;
 
 }
 
