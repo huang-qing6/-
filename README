@@ -12,7 +12,7 @@ coroutine -- 对coroutine拙略的模仿
   -- fiber 协程
   -- schduler 整合前两章的调度
   -- timer 计时控制
-  -- iomanager 整合前四章，假如IO管理
+  -- iomanager 整合前四章，加入IO管理
   -- hook
 
 other -- 小分支都在这里
