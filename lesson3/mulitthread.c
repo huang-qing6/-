@@ -28,8 +28,12 @@ int main(){
         exit(0);
     }
 
-    pthread_join(pthread1, NULL);
-    pthread_join(pthread2, NULL);
+    /*pthread_join(pthread1, NULL);
+    pthread_join(pthread2, NULL);*/
+    while(1){
+        printf("main running\n");
+        sleep(1);
+    }
     printf("thread is term\n");
 
     return 0;
