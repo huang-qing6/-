@@ -2,6 +2,7 @@
 #include <memory.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 #define NUMBER 10
 
