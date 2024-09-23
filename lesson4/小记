@@ -1,0 +1,10 @@
+进程通讯
+
+无名管道buffer大小？ -- pipe
+
+默认65536的大小 -- pipe_size
+
+父子进程相互传递需要两条管道 -- two_pipe
+
+有名管道（mkfifo）-- named pipe
+? 不理解的open失败，目前有bug
