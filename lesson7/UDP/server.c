@@ -10,13 +10,12 @@
 
 int main(){
     int sockfd, client_sockfd;
-    struct sockaddr_in my_addr;
-    struct sockaddr_in client_addr;
+    struct sockaddr_in my_addr, client_addr;
     int addr_len;
-    char welcome[SIZE] = "Welcome to connect to moyuserver";
+    char buf[SIZE];
 
     // 1.socket
-    sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    sockfd = socket(AF_INET, SOCK_DGRAM, 0);
 
     // 2.bind
     my_addr.sin_family = AF_INET;
@@ -24,22 +23,12 @@ int main(){
     my_addr.sin_addr.s_addr = INADDR_ANY;
     bind(sockfd, (struct sockaddr*)&my_addr, sizeof(struct sockaddr));
 
-    // 3.listen
-    listen(sockfd, 10);
-
-    // 4.accept
+    // recv/send
     addr_len = sizeof(struct sockaddr);
     while(1){
         printf("server is waiting for the connect:\n");
-        client_sockfd = accept(sockfd, (struct sockaddr*)&client_addr, &addr_len);
-        printf("client address = %s\n", inet_ntoa(client_addr.sin_addr)); // 二进制转换
-    
-        // 5.send
-        send(client_sockfd, welcome, SIZE, 0);
-        printf("Disconnect the client request.\n");
-
-        // 6.close
-        close(client_sockfd);
+        recvfrom(sockfd, buf, SIZE, 0, (struct sockaddr *)&client_addr, &addr_len);// 与TCP不同，不用recvfrom甚至不知道client来自    
+        printf("recv from client: %s\n", buf);
     }
 
     close(sockfd);

@@ -9,7 +9,7 @@
 #define SIZE 100
 
 int main(){
-    int sockfd, client_sockfd;
+    int sockfd, client_sockfd, i;
     struct sockaddr_in my_addr;
     struct sockaddr_in client_addr;
     int addr_len;
@@ -29,6 +29,10 @@ int main(){
 
     // 4.accept
     addr_len = sizeof(struct sockaddr);
+
+    for(i = 0; i < 4; i++) // 总共16个进程初始化
+        fork();
+
     while(1){
         printf("server is waiting for the connect:\n");
         client_sockfd = accept(sockfd, (struct sockaddr*)&client_addr, &addr_len);
