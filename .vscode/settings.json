@@ -67,6 +67,13 @@
         "set": "cpp",
         "shared_mutex": "cpp",
         "unistd.h": "c",
-        "stdlib.h": "c"
-    }
+        "stdlib.h": "c",
+        "shm.h": "c",
+        "string.h": "c",
+        "stdio.h": "c",
+        "types.h": "c",
+        "mman.h": "c",
+        "socket.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }

@@ -6,5 +6,6 @@
 
 父子进程相互传递需要两条管道 -- two_pipe
 
-有名管道（mkfifo）-- named pipe
+有名管道(mkfifo)-- named pipe
 ? 不理解的open失败，目前有bug
+-- 已解决，需要root权限
